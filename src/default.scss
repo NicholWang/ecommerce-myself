@@ -1,0 +1,35 @@
+*,::after,::before{
+  box-sizing: border-box;
+}
+
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+.App,
+#root{
+  height: 100%;
+}
+html{
+  font-size: 10px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover{
+  transition: all .4s ease-in-out;
+}
+
+.main{
+  width: 100%;
+  height: calc(100% - 6.5rem - 5.8rem);
+  margin: 0 auto;
+  padding: 0 5rem;
+}
