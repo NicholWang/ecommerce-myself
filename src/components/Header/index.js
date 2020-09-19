@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "./style.scss";
 import Logo from "../../assets/logo.png";
 import { v4 as uuidv4 } from "uuid";
 import { auth } from "../../firebase/util";
-const Header = ({ currentUser }) => {
+const Header = (props) => {
+  const { currentUser } = props;
   return (
     <div className="header">
       <div className="wrap">
@@ -17,6 +19,9 @@ const Header = ({ currentUser }) => {
         <div className="callToActions">
           {currentUser && (
             <ul>
+              <li key={uuidv4()}>
+                <Link to="/dashboard">my account</Link>
+              </li>
               <li key={uuidv4()} onClick={() => auth.signOut()}>
                 <span>LogOut</span>
               </li>
@@ -38,4 +43,7 @@ const Header = ({ currentUser }) => {
   );
 };
 
-export default Header;
+Header.currentUser = null;
+
+const mapStateToProps = ({ user }) => ({ currentUser: user.currentUser });
+export default connect(mapStateToProps, null)(Header);

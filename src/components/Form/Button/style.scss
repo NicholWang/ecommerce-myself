@@ -15,17 +15,20 @@
   letter-spacing: 0.2rem;
   &:hover {
     background-color: lighten(rgb(85, 124, 155), 10%);
+    transition: background-color 1.5s linear;
   }
 }
 .btn-secondary {
   background-color: rgb(0, 137, 123);
   &:hover {
     background-color: lighten(rgb(0, 137, 123), 5%);
+    transition: background-color 1.5s linear;
   }
 }
 .btn-reset {
   background-color: darken(rgb(255, 112, 67), 5%);
   &:hover {
     background-color: lighten(darken(rgb(255, 112, 67), 5%), 10%);
+    transition: background-color 1.5s linear;
   }
 }
